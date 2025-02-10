@@ -5,37 +5,218 @@ body {
 /* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
 
 .robot-container {
+  width: 500px;
+  height: 500px;
+  background-color: aliceblue;
+  border: 3px black solid;
+  margin-top: 100px;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .robot-face-shape {
+  border: 3px black solid;
+  border-radius: 10px;
+  width: 350px;
+  height: 350px;
+  background-image: radial-gradient(rgb(235, 217, 217), rgb(128, 34, 0), rgb(232, 232, 241));
+  display: flex;
+  justify-content: space-evenly;
+  order: 2;
 }
 
 .robot-eye-left {
+  border: 2px black solid;
+  width: 30px;
+  height: 8%;
+  background-image: url(../Devslopes-Logo.png);
+  background-position: center ;
+  background-size: contain ;
+  display: flex;
+  position: static;
+  margin-left: -300px;
+  margin-top: 55px;
+  order:1 ;
+  animation: lefteye 2.5s infinite;
 }
 
+
 .robot-eye-right {
+  border-left: 15px solid rgb(239, 239, 234);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: static;
+  margin-left: 30px;
+  margin-top: 55px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  order: 3;
+  animation-name: righteye;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 .robot-ear-left {
+  border-right: 42px solid;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  margin-top: -150px;
+  margin-right: 1px ;
+}
+
+.robot-ear-left:hover{
+  border-right: 42px solid;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  animation: leftear 1s infinite;
 }
 
 .robot-ear-right {
+  border: 2px black solid;
+  background-color: black;
+  border-radius: 50px / 60px;
+  height: 50px;
+  width: 25px;
+  position: relative;
+  margin-top: -150px;
+  margin-left: 1px;
+  order:4;
+  animation: rightear 2s infinite;
 }
 
 .robot-nose {
+  border: 2px solid black;
+  order: 2;
+  width: 100px;
+  height: 80px;
+  background-color: black;
+  border-radius: 100px / 50px;
+  position: static;
+  margin-top: 100px;
+  margin-left: 20px;
+  animation-name:nose;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
-.robot-nose:before {
-}
-
-.robot-nose:after {
-}
 
 .robot-teeth {
+  border: 1px black solid;
+  border-radius: 250px/ 20px;
+  position:absolute;
+  height: 4em;
+  width: 260px;
+  position: static;
+  margin-top: 210px;
+  margin-left: 5px;
+  background-image: radial-gradient(rgb(235, 225, 225) 3%, rgb(128, 34, 0, .7) 10%, rgb(126, 31, 0) 60%);
+  display: flex;
+  overflow: hidden;
+  animation: mouth 1s infinite;
 }
 
 .robot-tooth {
+  border: 1px solid black;
+  background-color: rgb(237, 241, 242);
+  border-radius: 50%;
+  position: relative;
+  height: 19px;
+  width: 30px;
 }
 
+
 .robot-hair-style {
+  border: solid black 3px;
+  background-color: rgba(225, 43, 43, 0.45);
+  height: 80px;
+  width: 350px;
+  position: relative;
+  margin-left:-355px;
+  order: 2;
+  margin-bottom: 350px;
+  display: flex;
+  overflow: hidden;
+  animation: hairstyle 1s infinite;
+}
+
+.robot-hair-one {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 100px solid rgb(248, 239, 239);
+}
+
+.robot-hair-two {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 100px solid rgb(248, 239, 239);
+}
+
+.robot-hair-three {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 100px solid rgb(244, 238, 238);
+}
+
+@keyframes lefteye{
+  0%{opacity:1;}
+  20%{opacity: 0;}
+  40%{opacity:0;}
+  60%{opacity: 0;}
+  80%{opacity: 0;}
+  100%{opacity:0;}
+}
+
+@keyframes righteye {
+  from{border-left: 15px solid rgb(239, 239, 234);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;}
+  to{border-left: 15px solid brown;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;}
+}
+
+@keyframes nose {
+  0%{transform: rotate(0deg);}
+  25%{transform: rotate(45deg);}
+  50%{transform: rotate(90deg);}
+  100%{transform: rotate(360deg);}
+}
+
+@keyframes mouth {
+  from{background-color: black;}
+  to{background-color: white;}
+}
+
+@keyframes leftear {
+  from{  border-right: 42px solid;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid transparent;}
+  to{  border-right: 42px solid red;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid transparent;}
+}
+
+@keyframes rightear {
+  0%{left:0px; top:0px;}
+  25%{left:0px; top:20px}
+  50%{left:20px; top:20px;}
+  75%{left:20px; top:0px;}
+  100%{left:0px; top:0px}
+}
+
+@keyframes hairstyle {
+  from{height:80px; width: 350px}
+  to{height: 100px; width: 360px;}
 }
